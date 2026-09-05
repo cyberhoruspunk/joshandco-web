@@ -2,42 +2,37 @@ import React from 'react';
 
 export const FooterSection: React.FC = () => {
   return (
-    <footer
-      id="contact"
-      style={{
-        padding: '8rem 4rem 3rem',
-        borderTop: '1px solid var(--border-subtle)',
-        backgroundColor: 'var(--bg-secondary)',
-      }}
-    >
-      <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
+    <footer id="contact" style={{ borderTop: '1px solid var(--border-subtle)', backgroundColor: 'var(--bg-secondary)', padding: 'clamp(4rem, 8vw, 6rem) 0 2rem' }}>
+      <div className="site-container">
+        
+        <div className="footer-top">
           <div>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.75rem)', fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
               Have an idea<br />worth building?
             </h2>
-            <div style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+            <div style={{ fontSize: 'clamp(1.75rem, 3.5vw, 2.5rem)', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
               Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
             </div>
-            <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', fontSize: '1.05rem' }}>
+            <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', fontSize: '1rem' }}>
               Let’s make it real.
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '2rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '1.5rem' }}>
             <a
               href="mailto:contact@joshandco.dev"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                padding: '14px 28px',
+                padding: '12px 24px',
                 borderRadius: '9999px',
                 backgroundColor: 'var(--btn-primary-bg)',
                 color: 'var(--btn-primary-text)',
                 fontSize: '0.9rem',
                 fontWeight: 600,
                 boxShadow: 'var(--shadow-card)',
+                whiteSpace: 'nowrap',
               }}
             >
               Start a Conversation
@@ -70,10 +65,11 @@ export const FooterSection: React.FC = () => {
           </div>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+        <div className="footer-bottom">
           <div>© {new Date().getFullYear()} Josh & Co. All rights reserved.</div>
           <div>Building systems. Crafting stories. Delivering impact.</div>
         </div>
+
       </div>
     </footer>
   );

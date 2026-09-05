@@ -57,11 +57,11 @@ export const ProfilePhoto: React.FC<ProfilePhotoProps> = ({ variant = 'hero', cl
         <div
           style={{
             position: 'absolute',
-            bottom: '24px',
-            left: '24px',
+            bottom: '20px',
+            left: '20px',
             fontFamily: 'serif',
             fontStyle: 'italic',
-            fontSize: '1.5rem',
+            fontSize: '1.4rem',
             color: '#ffffff',
             textShadow: '0 2px 12px rgba(0, 0, 0, 0.8)',
             pointerEvents: 'none',

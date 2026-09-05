@@ -3,29 +3,13 @@ import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar: React.FC = () => {
   return (
-    <header
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        display: 'flex',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        padding: '1.1rem 4rem',
-        backdropFilter: 'blur(20px)',
-        WebkitBackdropFilter: 'blur(20px)',
-        backgroundColor: 'var(--bg-nav)',
-        borderBottom: '1px solid var(--border-subtle)',
-      }}
-    >
+    <header className="nav-header">
       <div style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
         Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
       </div>
 
-      <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
-        {['Work', 'About', 'Process', 'Capabilities', 'Contact'].map((item) => (
+      <nav className="nav-links">
+        {['Work', 'About', 'Capabilities', 'Contact'].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
@@ -40,7 +24,7 @@ export const Navbar: React.FC = () => {
         ))}
       </nav>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
         <ThemeToggle />
         <a
           href="#contact"
@@ -50,11 +34,12 @@ export const Navbar: React.FC = () => {
             gap: '6px',
             backgroundColor: 'var(--btn-primary-bg)',
             color: 'var(--btn-primary-text)',
-            padding: '9px 20px',
+            padding: '8px 18px',
             borderRadius: '9999px',
             fontSize: '0.85rem',
             fontWeight: 600,
             boxShadow: 'var(--shadow-subtle)',
+            whiteSpace: 'nowrap',
           }}
         >
           Let’s Build

@@ -56,93 +56,84 @@ const METRICS = [
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" style={{ padding: '8rem 4rem', maxWidth: '1240px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.25fr', gap: '5rem', alignItems: 'center' }}>
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <div style={{ width: '280px', height: '380px' }}>
-            <ProfilePhoto variant="about" />
-          </div>
+    <section id="about" className="section-spacing" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <div className="site-container">
+        <div className="about-grid">
+          
+          <div className="about-left-col">
+            <div style={{ width: '100%', maxWidth: '280px', height: '360px', flexShrink: 0 }}>
+              <ProfilePhoto variant="about" />
+            </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
-            {ROLES.map((role, i) => (
-              <div
-                key={i}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  background: 'var(--bg-card)',
-                  border: '1px solid var(--border-subtle)',
-                  borderRadius: '12px',
-                  padding: '10px 16px',
-                  width: '210px',
-                  boxShadow: 'var(--shadow-subtle)',
-                }}
-              >
-                <div style={{ color: 'var(--text-secondary)' }}>{role.icon}</div>
-                <div>
-                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>{role.title}</div>
-                  <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>{role.subtitle}</div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', width: '100%', maxWidth: '240px' }}>
+              {ROLES.map((role, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    background: 'var(--bg-card)',
+                    border: '1px solid var(--border-subtle)',
+                    borderRadius: '12px',
+                    padding: '10px 14px',
+                    boxShadow: 'var(--shadow-subtle)',
+                  }}
+                >
+                  <div style={{ color: 'var(--text-secondary)' }}>{role.icon}</div>
+                  <div>
+                    <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>{role.title}</div>
+                    <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>{role.subtitle}</div>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div>
-          <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
-            About
-          </span>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, margin: '0.75rem 0 0.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
-            Oni Joshua Adeola
-          </h2>
-          <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: 500 }}>
-            Software Engineer · AI Architect · Visual Creator
-          </p>
+          <div>
+            <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
+              About
+            </span>
+            <h2 style={{ fontSize: 'clamp(2rem, 3.5vw, 2.75rem)', fontWeight: 700, margin: '0.75rem 0 0.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+              Oni Joshua Adeola
+            </h2>
+            <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: 500 }}>
+              Software Engineer · AI Architect · Visual Creator
+            </p>
 
-          <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '2rem' }}>
-            I combine engineering precision with creative vision to build digital systems, AI solutions, and visual stories that solve real problems and leave a lasting impact.
-          </p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '1.75rem' }}>
+              I combine engineering precision with creative vision to build digital systems, AI solutions, and visual stories that solve real problems and leave a lasting impact.
+            </p>
 
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '14px',
-              padding: '12px 18px',
-              background: 'var(--bg-card-subtle)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: '14px',
-              marginBottom: '3rem',
-            }}
-          >
             <div
               style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                background: 'var(--btn-secondary-bg)',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
-                justifyContent: 'center',
+                gap: '12px',
+                padding: '10px 16px',
+                background: 'var(--bg-card-subtle)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '12px',
+                marginBottom: '2.5rem',
               }}
             >
-              🎓
+              <span style={{ fontSize: '1.25rem' }}>🎓</span>
+              <div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>Computer Science</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Federal University Oye-Ekiti (FUOYE), Nigeria</div>
+              </div>
             </div>
-            <div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>Computer Science</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Federal University Oye-Ekiti (FUOYE), Nigeria</div>
+
+            <div className="about-metrics-grid">
+              {METRICS.map((m, i) => (
+                <div key={i}>
+                  <div style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>{m.value}</div>
+                  <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '4px' }}>{m.label}</div>
+                </div>
+              ))}
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '2rem' }}>
-            {METRICS.map((m, i) => (
-              <div key={i}>
-                <div style={{ fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>{m.value}</div>
-                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '4px' }}>{m.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
