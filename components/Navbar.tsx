@@ -1,54 +1,29 @@
 import React from 'react';
-import { ThemeToggle } from './ThemeToggle';
+import Link from 'next/link';
 
-export const Navbar: React.FC = () => {
+export default function Navbar() {
   return (
-    <header className="nav-header">
-      <div style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
-        Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
-      </div>
+    <header className="w-full max-w-[1240px] mx-auto px-6 py-6 flex items-center justify-between">
+      <Link href="/" className="text-xl font-bold tracking-tight text-neutral-950 no-underline">
+        Josh & Co.
+      </Link>
 
-      <nav className="nav-links">
-        {['Work', 'About', 'Capabilities', 'Contact'].map((item) => (
-          <a
-            key={item}
-            href={`#${item.toLowerCase()}`}
-            style={{
-              fontSize: '0.875rem',
-              fontWeight: 500,
-              color: 'var(--text-secondary)',
-            }}
-          >
-            {item}
-          </a>
-        ))}
+      <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-neutral-600">
+        <a href="#work" className="hover:text-neutral-950 transition-colors">Work</a>
+        <a href="#about" className="hover:text-neutral-950 transition-colors">About</a>
+        <a href="#process" className="hover:text-neutral-950 transition-colors">Process</a>
+        <a href="#capabilities" className="hover:text-neutral-950 transition-colors">Capabilities</a>
+        <a href="#contact" className="hover:text-neutral-950 transition-colors">Contact</a>
       </nav>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-        <ThemeToggle />
+      <div className="flex items-center gap-4">
         <a
-          href="#contact"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '6px',
-            backgroundColor: 'var(--btn-primary-bg)',
-            color: 'var(--btn-primary-text)',
-            padding: '8px 18px',
-            borderRadius: '9999px',
-            fontSize: '0.85rem',
-            fontWeight: 600,
-            boxShadow: 'var(--shadow-subtle)',
-            whiteSpace: 'nowrap',
-          }}
+          href="mailto:contact@joshandco.cc"
+          className="bg-neutral-950 text-white px-5 py-2 rounded-full text-xs font-semibold tracking-wide hover:bg-neutral-800 transition-colors"
         >
-          Let’s Build
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-            <line x1="7" y1="17" x2="17" y2="7" />
-            <polyline points="7 7 17 7 17 17" />
-          </svg>
+          Let's Build ?
         </a>
       </div>
     </header>
   );
-};
+}

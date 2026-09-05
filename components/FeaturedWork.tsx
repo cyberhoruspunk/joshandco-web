@@ -1,120 +1,46 @@
 import React from 'react';
 
-const PROJECTS = [
-  {
-    id: '01',
-    title: 'Virtual Machine Escape Prevention System',
-    tags: 'Python, Flask, WebSockets, Cybersecurity Architecture.',
-    themeBackground: 'var(--card-project-1)',
-    badgeColor: '#0071E3',
-  },
-  {
-    id: '02',
-    title: 'Web & Application Engineering',
-    tags: 'Next.js, React, TypeScript, Tailwind CSS, Python/Flask, WebSockets.',
-    themeBackground: 'var(--card-project-2)',
-    badgeColor: '#7928CA',
-  },
-  {
-    id: '03',
-    title: 'AI & Prompt Architecture',
-    tags: 'Structured prompting, few-shot systems, evaluation pipelines, AI workflows.',
-    themeBackground: 'var(--card-project-3)',
-    badgeColor: '#D946EF',
-  },
-  {
-    id: '04',
-    title: 'Cinematic Visuals',
-    tags: 'iPhone 15 Pro, Blackmagic Camera, Apple Log, CapCut color grading.',
-    themeBackground: 'var(--card-project-4)',
-    badgeColor: '#10B981',
-  },
-  {
-    id: '05',
-    title: 'Creative Direction',
-    tags: 'Portrait retouching, visual design, campaign graphics, futuristic art direction.',
-    themeBackground: 'var(--card-project-5)',
-    badgeColor: '#F43F5E',
-  },
-];
+export default function FeaturedWork() {
+  const projects = [
+    {
+      title: 'Hypervisor Isolation Engine',
+      category: 'Systems Security / Python',
+      desc: 'Runtime VM escape mitigation engine monitoring syscall patterns and hypercall integrity.',
+      link: 'https://github.com/cyberhoruspunk'
+    },
+    {
+      title: 'Prompt Architecture Engine',
+      category: 'AI Systems / Next.js',
+      desc: 'Structured generation framework for deterministic multi-stage LLM evaluation pipelines.',
+      link: 'https://github.com/cyberhoruspunk'
+    },
+    {
+      title: 'Cinematic Visual Direction',
+      category: 'Color Science / Apple Log',
+      desc: 'Blackmagic Log workflows, 10-bit color timing, and high-fidelity video productions.',
+      link: '#'
+    }
+  ];
 
-export const FeaturedWork: React.FC = () => {
   return (
-    <section id="work" className="section-spacing" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-      <div className="site-container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
-          <div>
-            <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
-              Featured Work
-            </span>
-          </div>
-          <a
-            href="#all-projects"
-            style={{
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              color: 'var(--accent-text-gradient)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-            }}
-          >
-            View All Projects →
-          </a>
-        </div>
-
-        <div className="work-grid">
-          {PROJECTS.map((proj) => (
-            <div
-              key={proj.id}
-              style={{
-                position: 'relative',
-                minHeight: '340px',
-                borderRadius: '20px',
-                padding: '24px',
-                background: proj.themeBackground,
-                border: '1px solid var(--border-subtle)',
-                boxShadow: 'var(--shadow-card)',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-              }}
-            >
-              <div>
-                <span style={{ display: 'inline-block', fontSize: '0.75rem', fontWeight: 700, color: proj.badgeColor, marginBottom: '8px' }}>
-                  {proj.id}
-                </span>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, lineHeight: 1.3, color: 'var(--text-primary)' }}>
-                  {proj.title}
-                </h3>
-                <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '8px', lineHeight: 1.5 }}>
-                  {proj.tags}
-                </p>
-              </div>
-
-              <div
-                style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  backgroundColor: 'var(--btn-secondary-bg)',
-                  border: '1px solid var(--border-subtle)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--text-primary)',
-                  marginTop: '1.5rem',
-                }}
-              >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </div>
+    <section id="work" className="w-full max-w-[1240px] mx-auto px-6 py-16 border-t border-neutral-200">
+      <div className="text-xs font-bold tracking-widest text-neutral-500 uppercase mb-8">
+        Featured Work & Projects
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {projects.map((project, i) => (
+          <div key={i} className="bg-white border border-neutral-200/80 rounded-2xl p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-2">{project.category}</div>
+              <h3 className="text-lg font-bold text-neutral-900 mb-2">{project.title}</h3>
+              <p className="text-sm text-neutral-600 leading-relaxed mb-6">{project.desc}</p>
             </div>
-          ))}
-        </div>
+            <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-xs font-bold text-neutral-900 hover:underline">
+              View Repository ?
+            </a>
+          </div>
+        ))}
       </div>
     </section>
   );
-};
+}

@@ -1,119 +1,46 @@
 import React from 'react';
-import { ProfilePhoto } from './ProfilePhoto';
+import ProfilePhoto from './ProfilePhoto';
 
-export const Hero: React.FC = () => {
+export default function Hero() {
   return (
-    <section className="hero-wrapper">
-      <div className="site-container">
-        <div className="hero-grid">
-          
-          {/* Left Text Content */}
-          <div>
-            <p
-              style={{
-                fontSize: '0.78rem',
-                letterSpacing: '0.18em',
-                textTransform: 'uppercase',
-                fontWeight: 700,
-                color: 'var(--accent-text-gradient)',
-                marginBottom: '1rem',
-              }}
-            >
-              Creative Engineer Â· Storyteller Â· Problem Solver
-            </p>
-
-            <h1
-              style={{
-                fontSize: 'clamp(2.3rem, 5.5vw, 4.5rem)',
-                lineHeight: 1.08,
-                fontWeight: 800,
-                letterSpacing: '-0.035em',
-                color: 'var(--text-primary)',
-                marginBottom: '1.25rem',
-              }}
-            >
-              I build. I direct.<br />
-              I make ideas real.
-            </h1>
-
-            <p
-              style={{
-                fontSize: 'clamp(0.95rem, 1.5vw, 1.15rem)',
-                lineHeight: 1.6,
-                color: 'var(--text-secondary)',
-                maxWidth: '520px',
-                marginBottom: '1.75rem',
-              }}
-            >
-              Software engineering, AI systems, visual storytelling, and execution â€” crafted under one creative studio.
-            </p>
-
-            <div style={{ fontSize: '2rem', fontWeight: 700, marginBottom: '2rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
-              Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
-            </div>
-
-            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
-              <a
-                href="#work"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '8px',
-                  backgroundColor: 'var(--btn-primary-bg)',
-                  color: 'var(--btn-primary-text)',
-                  padding: '12px 24px',
-                  borderRadius: '9999px',
-                  fontWeight: 600,
-                  fontSize: '0.9rem',
-                  boxShadow: 'var(--shadow-card)',
-                }}
-              >
-                Explore My Work
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </a>
-
-              <a
-                href="#contact"
-                style={{
-                  padding: '12px 24px',
-                  borderRadius: '9999px',
-                  border: '1px solid var(--btn-secondary-border)',
-                  backgroundColor: 'var(--btn-secondary-bg)',
-                  color: 'var(--btn-secondary-text)',
-                  fontWeight: 500,
-                  fontSize: '0.9rem',
-                }}
-              >
-                Letâ€™s Build Something
-              </a>
-            </div>
-          </div>
-
-          {/* Right Column / Fluid Portrait */}
-          <div className="hero-portrait-wrapper">
-            <ProfilePhoto variant="hero" />
-
-            {/* Code Snippet Floating Graphic */}
-            <div className="floating-code-snippet">
-              <div style={{ color: 'var(--text-muted)', marginBottom: '4px' }}>// Execution Pipeline</div>
-              <div>
-                <span style={{ color: 'var(--accent-purple)', fontWeight: 600 }}>def</span>{' '}
-                <span style={{ color: 'var(--accent-blue)' }}>build_idea</span>(vision):
-              </div>
-              <div style={{ paddingLeft: '12px', color: 'var(--text-secondary)' }}>strategy = Architect()</div>
-              <div style={{ paddingLeft: '12px', color: 'var(--text-secondary)' }}>system = Engineer()</div>
-              <div style={{ paddingLeft: '12px', color: 'var(--text-secondary)' }}>story = Visualize()</div>
-              <div style={{ paddingLeft: '12px', color: 'var(--accent-purple)' }}>
-                return <span style={{ color: 'var(--accent-emerald)', fontWeight: 600 }}>Execute</span>(vision)
-              </div>
-            </div>
-          </div>
-
+    <section className="w-full max-w-[1240px] mx-auto px-6 pt-8 pb-16 md:py-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <div className="text-[11px] font-bold tracking-[0.18em] uppercase text-neutral-500 mb-6">
+          Creative Engineer · Storyteller · Problem Solver
         </div>
+
+        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-neutral-950 leading-[1.08] mb-6">
+          I build. I direct.<br />
+          I make ideas real.
+        </h1>
+
+        <p className="text-base sm:text-lg text-neutral-600 max-w-lg leading-relaxed mb-6">
+          Software engineering, AI systems, visual storytelling, and execution — crafted under one creative studio.
+        </p>
+
+        <div className="text-xl font-bold text-neutral-950 tracking-tight mb-8">
+          Josh & Co.
+        </div>
+
+        <div className="flex flex-wrap items-center gap-4">
+          <a
+            href="#work"
+            className="bg-neutral-950 text-white px-7 py-3 rounded-full text-sm font-semibold hover:bg-neutral-800 transition-colors"
+          >
+            Explore My Work ?
+          </a>
+          <a
+            href="mailto:contact@joshandco.cc"
+            className="bg-neutral-100 text-neutral-800 border border-neutral-300 px-7 py-3 rounded-full text-sm font-medium hover:bg-neutral-200 transition-colors"
+          >
+            Let's Build Something
+          </a>
+        </div>
+      </div>
+
+      <div className="flex justify-center lg:justify-end">
+        <ProfilePhoto />
       </div>
     </section>
   );
-};
+}
