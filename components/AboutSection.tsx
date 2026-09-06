@@ -64,7 +64,7 @@ export const AboutSection: React.FC = () => {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', width: '100%' }}>
-            {ROLES.map((role, i) => (
+            {RORoles: ROLES.map((role, i) => (
               <div
                 key={i}
                 style={{
@@ -103,35 +103,62 @@ export const AboutSection: React.FC = () => {
             I combine engineering precision with creative vision to build digital systems, AI solutions, and visual stories that solve real problems and leave a lasting impact.
           </p>
 
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '14px',
-              padding: '12px 18px',
-              background: 'var(--bg-card-subtle)',
-              border: '1px solid var(--border-subtle)',
-              borderRadius: '14px',
-              marginBottom: '2.5rem',
-            }}
-          >
+          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap', marginBottom: '2.5rem' }}>
             <div
               style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '50%',
-                background: 'var(--btn-secondary-bg)',
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
-                justifyContent: 'center',
+                gap: '14px',
+                padding: '12px 18px',
+                background: 'var(--bg-card-subtle)',
+                border: '1px solid var(--border-subtle)',
+                borderRadius: '14px',
               }}
             >
-              🎓
+              <div
+                style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  background: 'var(--btn-secondary-bg)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                🎓
+              </div>
+              <div>
+                <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>Computer Science</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Federal University Oye-Ekiti (FUOYE), Nigeria</div>
+              </div>
             </div>
-            <div>
-              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>Computer Science</div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Federal University Oye-Ekiti (FUOYE), Nigeria</div>
-            </div>
+
+            {/* Direct Download Button */}
+            <a
+              href="/Oni_Joshua_Adeola_Resume.pdf"
+              download="Oni_Joshua_Adeola_Resume.pdf"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 20px',
+                borderRadius: '14px',
+                backgroundColor: 'var(--btn-primary-bg)',
+                color: 'var(--btn-primary-text)',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                textDecoration: 'none',
+                boxShadow: 'var(--shadow-card)',
+              }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download CV
+            </a>
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '1.5rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '2rem' }}>
