@@ -13,7 +13,7 @@ export const Navbar: React.FC = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '1.1rem 4rem',
+        padding: '1rem clamp(1rem, 4vw, 4rem)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         backgroundColor: 'var(--bg-nav)',
@@ -24,8 +24,15 @@ export const Navbar: React.FC = () => {
         Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
       </div>
 
-      <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
-        {['Work', 'About', 'Process', 'Capabilities', 'Contact'].map((item) => (
+      <nav
+        style={{
+          display: 'flex',
+          gap: 'clamp(1rem, 2vw, 2.5rem)',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+        }}
+      >
+        {['Work', 'About', 'Capabilities', 'Contact'].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
@@ -33,6 +40,7 @@ export const Navbar: React.FC = () => {
               fontSize: '0.875rem',
               fontWeight: 500,
               color: 'var(--text-secondary)',
+              textDecoration: 'none',
             }}
           >
             {item}
@@ -40,7 +48,7 @@ export const Navbar: React.FC = () => {
         ))}
       </nav>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
         <ThemeToggle />
         <a
           href="#contact"
@@ -50,11 +58,13 @@ export const Navbar: React.FC = () => {
             gap: '6px',
             backgroundColor: 'var(--btn-primary-bg)',
             color: 'var(--btn-primary-text)',
-            padding: '9px 20px',
+            padding: '8px 16px',
             borderRadius: '9999px',
             fontSize: '0.85rem',
             fontWeight: 600,
+            textDecoration: 'none',
             boxShadow: 'var(--shadow-subtle)',
+            whiteSpace: 'nowrap',
           }}
         >
           Let’s Build

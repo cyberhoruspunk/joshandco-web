@@ -12,7 +12,7 @@ const CAPABILITIES = [
     desc: 'Full-stack web applications, real-time systems, backend architecture.',
     points: ['Scalable', 'Reliable', 'Performant'],
     graphic: (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
         <polygon points="32 6 56 18 32 30 8 18" />
         <polygon points="32 22 56 34 32 46 8 34" />
         <polygon points="32 38 56 50 32 62 8 50" />
@@ -30,7 +30,7 @@ const CAPABILITIES = [
     desc: 'Prompt engineering, AI workflows, evaluation systems, structured prompting.',
     points: ['Intelligent', 'Adaptive', 'Measurable'],
     graphic: (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
         <circle cx="32" cy="32" r="6" />
         <circle cx="16" cy="20" r="4" />
         <circle cx="48" cy="20" r="4" />
@@ -54,7 +54,7 @@ const CAPABILITIES = [
     desc: 'Mobile cinematography, color grading, portrait retouching, visual direction.',
     points: ['Cinematic', 'Impactful', 'Memorable'],
     graphic: (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
         <circle cx="32" cy="32" r="26" />
         <circle cx="32" cy="32" r="18" strokeDasharray="4 4" />
         <circle cx="32" cy="32" r="8" />
@@ -71,7 +71,7 @@ const CAPABILITIES = [
     desc: 'Project management, sprint planning, QA, delivery, and technical coordination.',
     points: ['Organized', 'Efficient', 'Results-driven'],
     graphic: (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
         <rect x="10" y="14" width="44" height="36" rx="4" />
         <line x1="16" y1="24" x2="36" y2="24" />
         <line x1="16" y1="32" x2="48" y2="32" />
@@ -83,14 +83,14 @@ const CAPABILITIES = [
 
 export const CapabilitiesSection: React.FC = () => {
   return (
-    <section id="capabilities" style={{ padding: '7rem 4rem', maxWidth: '1360px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
+    <section id="capabilities" style={{ padding: 'clamp(4rem, 7vw, 7rem) clamp(1.25rem, 4vw, 4rem)', maxWidth: '1360px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
       <div style={{ marginBottom: '2.5rem' }}>
         <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
           Experience / Capabilities
         </span>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1.5rem' }}>
         {CAPABILITIES.map((cap, i) => (
           <div
             key={i}
@@ -98,11 +98,11 @@ export const CapabilitiesSection: React.FC = () => {
               background: 'var(--bg-card)',
               border: '1px solid var(--border-subtle)',
               borderRadius: '20px',
-              padding: '28px',
+              padding: '24px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '380px',
+              minHeight: '340px',
               boxShadow: 'var(--shadow-card)',
             }}
           >
@@ -124,12 +124,12 @@ export const CapabilitiesSection: React.FC = () => {
                 {cap.icon}
               </div>
 
-              <h3 style={{ fontSize: '1.35rem', fontWeight: 600, marginBottom: '0.75rem', color: 'var(--text-primary)' }}>{cap.title}</h3>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem', color: 'var(--text-primary)' }}>{cap.title}</h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                 {cap.desc}
               </p>
 
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px', padding: 0, margin: 0 }}>
                 {cap.points.map((pt, idx) => (
                   <li key={idx} style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: 'var(--text-muted)' }} />

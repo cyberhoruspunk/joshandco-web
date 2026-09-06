@@ -5,18 +5,18 @@ export const FooterSection: React.FC = () => {
     <footer
       id="contact"
       style={{
-        padding: '8rem 4rem 3rem',
+        padding: 'clamp(4rem, 8vw, 8rem) clamp(1.25rem, 4vw, 4rem) 3rem',
         borderTop: '1px solid var(--border-subtle)',
         backgroundColor: 'var(--bg-secondary)',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4rem', flexWrap: 'wrap', gap: '2.5rem' }}>
           <div>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
               Have an idea<br />worth building?
             </h2>
-            <div style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+            <div style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
               Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
             </div>
             <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', fontSize: '1.05rem' }}>
@@ -24,7 +24,7 @@ export const FooterSection: React.FC = () => {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '2rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '2rem' }}>
             <a
               href="mailto:contact@joshandco.dev"
               style={{
@@ -37,6 +37,7 @@ export const FooterSection: React.FC = () => {
                 color: 'var(--btn-primary-text)',
                 fontSize: '0.9rem',
                 fontWeight: 600,
+                textDecoration: 'none',
                 boxShadow: 'var(--shadow-card)',
               }}
             >
@@ -48,7 +49,7 @@ export const FooterSection: React.FC = () => {
             </a>
 
             <div style={{ display: 'flex', gap: '1.25rem', color: 'var(--text-secondary)' }}>
-              <a href="#" aria-label="GitHub" style={{ color: 'inherit' }}>
+              <a href="https://github.com/cyberhoruspunk" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style={{ color: 'inherit' }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
                 </svg>
@@ -70,7 +71,7 @@ export const FooterSection: React.FC = () => {
           </div>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)', flexWrap: 'wrap', gap: '1rem' }}>
           <div>© {new Date().getFullYear()} Josh & Co. All rights reserved.</div>
           <div>Building systems. Crafting stories. Delivering impact.</div>
         </div>

@@ -1,0 +1,1067 @@
+﻿=== FILE: C:\Users\DELL\Desktop\joshandco-web\components\AboutSection.tsx ===
+import React from 'react';
+import { ProfilePhoto } from './ProfilePhoto';
+
+const ROLES = [
+  {
+    title: 'Engineer',
+    subtitle: 'Systems that scale',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="2" y="2" width="8" height="8" rx="2" />
+        <rect x="14" y="2" width="8" height="8" rx="2" />
+        <rect x="2" y="14" width="8" height="8" rx="2" />
+        <rect x="14" y="14" width="8" height="8" rx="2" />
+      </svg>
+    ),
+  },
+  {
+    title: 'AI Architect',
+    subtitle: 'Intelligence that works',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v3m0 14v3m10-10h-3M5 12H2m15.07-7.07l-2.12 2.12M8.05 16.95l-2.12 2.12M18.07 18.07l-2.12-2.12M8.05 7.05L5.93 4.93" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Visual Creator',
+    subtitle: 'Stories that connect',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <rect x="2" y="3" width="20" height="14" rx="2" />
+        <line x1="8" y1="21" x2="16" y2="21" />
+        <line x1="12" y1="17" x2="12" y2="21" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Project Executor',
+    subtitle: 'Execution that delivers',
+    icon: (
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <polyline points="9 11 12 14 22 4" />
+        <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+      </svg>
+    ),
+  },
+];
+
+const METRICS = [
+  { value: '5+', label: 'Years Building' },
+  { value: '50+', label: 'Projects Delivered' },
+  { value: '10+', label: 'Technologies' },
+  { value: 'âˆž', label: 'Ideas in Progress' },
+];
+
+export const AboutSection: React.FC = () => {
+  return (
+    <section id="about" style={{ padding: '8rem 4rem', maxWidth: '1240px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.25fr', gap: '5rem', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+          <div style={{ width: '280px', height: '380px' }}>
+            <ProfilePhoto variant="about" />
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+            {ROLES.map((role, i) => (
+              <div
+                key={i}
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  background: 'var(--bg-card)',
+                  border: '1px solid var(--border-subtle)',
+                  borderRadius: '12px',
+                  padding: '10px 16px',
+                  width: '210px',
+                  boxShadow: 'var(--shadow-subtle)',
+                }}
+              >
+                <div style={{ color: 'var(--text-secondary)' }}>{role.icon}</div>
+                <div>
+                  <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>{role.title}</div>
+                  <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>{role.subtitle}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div>
+          <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
+            About
+          </span>
+          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, margin: '0.75rem 0 0.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+            Oni Joshua Adeola
+          </h2>
+          <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: 500 }}>
+            Software Engineer Â· AI Architect Â· Visual Creator
+          </p>
+
+          <p style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--text-secondary)', marginBottom: '2rem' }}>
+            I combine engineering precision with creative vision to build digital systems, AI solutions, and visual stories that solve real problems and leave a lasting impact.
+          </p>
+
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '14px',
+              padding: '12px 18px',
+              background: 'var(--bg-card-subtle)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '14px',
+              marginBottom: '3rem',
+            }}
+          >
+            <div
+              style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '50%',
+                background: 'var(--btn-secondary-bg)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              ðŸŽ“
+            </div>
+            <div>
+              <div style={{ fontSize: '0.85rem', fontWeight: 600, color: 'var(--text-primary)' }}>Computer Science</div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Federal University Oye-Ekiti (FUOYE), Nigeria</div>
+            </div>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '2rem' }}>
+            {METRICS.map((m, i) => (
+              <div key={i}>
+                <div style={{ fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>{m.value}</div>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '4px' }}>{m.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\components\CapabilitiesSection.tsx ===
+import React from 'react';
+
+const CAPABILITIES = [
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <polyline points="16 18 22 12 16 6" />
+        <polyline points="8 6 2 12 8 18" />
+      </svg>
+    ),
+    title: 'Engineering',
+    desc: 'Full-stack web applications, real-time systems, backend architecture.',
+    points: ['Scalable', 'Reliable', 'Performant'],
+    graphic: (
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+        <polygon points="32 6 56 18 32 30 8 18" />
+        <polygon points="32 22 56 34 32 46 8 34" />
+        <polygon points="32 38 56 50 32 62 8 50" />
+      </svg>
+    ),
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="12" cy="12" r="3" />
+        <path d="M12 2v3m0 14v3m10-10h-3M5 12H2" />
+      </svg>
+    ),
+    title: 'AI',
+    desc: 'Prompt engineering, AI workflows, evaluation systems, structured prompting.',
+    points: ['Intelligent', 'Adaptive', 'Measurable'],
+    graphic: (
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+        <circle cx="32" cy="32" r="6" />
+        <circle cx="16" cy="20" r="4" />
+        <circle cx="48" cy="20" r="4" />
+        <circle cx="20" cy="48" r="4" />
+        <circle cx="44" cy="48" r="4" />
+        <line x1="20" y1="22" x2="28" y2="28" />
+        <line x1="44" y1="22" x2="36" y2="28" />
+        <line x1="23" y1="45" x2="29" y2="36" />
+        <line x1="41" y1="45" x2="35" y2="36" />
+      </svg>
+    ),
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
+        <circle cx="12" cy="13" r="4" />
+      </svg>
+    ),
+    title: 'Visuals',
+    desc: 'Mobile cinematography, color grading, portrait retouching, visual direction.',
+    points: ['Cinematic', 'Impactful', 'Memorable'],
+    graphic: (
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+        <circle cx="32" cy="32" r="26" />
+        <circle cx="32" cy="32" r="18" strokeDasharray="4 4" />
+        <circle cx="32" cy="32" r="8" />
+      </svg>
+    ),
+  },
+  {
+    icon: (
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+      </svg>
+    ),
+    title: 'Execution',
+    desc: 'Project management, sprint planning, QA, delivery, and technical coordination.',
+    points: ['Organized', 'Efficient', 'Results-driven'],
+    graphic: (
+      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+        <rect x="10" y="14" width="44" height="36" rx="4" />
+        <line x1="16" y1="24" x2="36" y2="24" />
+        <line x1="16" y1="32" x2="48" y2="32" />
+        <line x1="16" y1="40" x2="28" y2="40" />
+      </svg>
+    ),
+  },
+];
+
+export const CapabilitiesSection: React.FC = () => {
+  return (
+    <section id="capabilities" style={{ padding: '7rem 4rem', maxWidth: '1360px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
+      <div style={{ marginBottom: '2.5rem' }}>
+        <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
+          Experience / Capabilities
+        </span>
+      </div>
+
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
+        {CAPABILITIES.map((cap, i) => (
+          <div
+            key={i}
+            style={{
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border-subtle)',
+              borderRadius: '20px',
+              padding: '28px',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              minHeight: '380px',
+              boxShadow: 'var(--shadow-card)',
+            }}
+          >
+            <div>
+              <div
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '10px',
+                  background: 'var(--btn-secondary-bg)',
+                  border: '1px solid var(--border-subtle)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--text-primary)',
+                  marginBottom: '1.5rem',
+                }}
+              >
+                {cap.icon}
+              </div>
+
+              <h3 style={{ fontSize: '1.35rem', fontWeight: 600, marginBottom: '0.75rem', color: 'var(--text-primary)' }}>{cap.title}</h3>
+              <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
+                {cap.desc}
+              </p>
+
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+                {cap.points.map((pt, idx) => (
+                  <li key={idx} style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: 'var(--text-muted)' }} />
+                    {pt}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.5rem' }}>{cap.graphic}</div>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\components\FeaturedWork.tsx ===
+import React from 'react';
+
+const PROJECTS = [
+  {
+    id: '01',
+    title: 'Virtual Machine Escape Prevention System',
+    tags: 'Python, Flask, WebSockets, Cybersecurity Architecture.',
+    themeBackground: 'var(--card-project-1)',
+    badgeColor: '#0071E3',
+  },
+  {
+    id: '02',
+    title: 'Web & Application Engineering',
+    tags: 'Next.js, React, TypeScript, Tailwind CSS, Python/Flask, WebSockets.',
+    themeBackground: 'var(--card-project-2)',
+    badgeColor: '#7928CA',
+  },
+  {
+    id: '03',
+    title: 'AI & Prompt Architecture',
+    tags: 'Structured prompting, few-shot systems, evaluation pipelines, AI workflows.',
+    themeBackground: 'var(--card-project-3)',
+    badgeColor: '#D946EF',
+  },
+  {
+    id: '04',
+    title: 'Cinematic Visuals',
+    tags: 'iPhone 15 Pro, Blackmagic Camera, Apple Log, CapCut color grading.',
+    themeBackground: 'var(--card-project-4)',
+    badgeColor: '#10B981',
+  },
+  {
+    id: '05',
+    title: 'Creative Direction',
+    tags: 'Portrait retouching, visual design, campaign graphics, futuristic art direction.',
+    themeBackground: 'var(--card-project-5)',
+    badgeColor: '#F43F5E',
+  },
+];
+
+export const FeaturedWork: React.FC = () => {
+  return (
+    <section id="work" style={{ padding: '7rem 4rem', backgroundColor: 'var(--bg-secondary)' }}>
+      <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem' }}>
+          <div>
+            <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
+              Featured Work
+            </span>
+          </div>
+          <a
+            href="#all-projects"
+            style={{
+              fontSize: '0.85rem',
+              fontWeight: 600,
+              color: 'var(--accent-text-gradient)',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '6px',
+            }}
+          >
+            View All Projects â†’
+          </a>
+        </div>
+
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1.25rem' }}>
+          {PROJECTS.map((proj) => (
+            <div
+              key={proj.id}
+              style={{
+                position: 'relative',
+                height: '420px',
+                borderRadius: '24px',
+                padding: '24px',
+                background: proj.themeBackground,
+                border: '1px solid var(--border-subtle)',
+                boxShadow: 'var(--shadow-card)',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                cursor: 'pointer',
+              }}
+            >
+              <div>
+                <span
+                  style={{
+                    display: 'inline-block',
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    color: proj.badgeColor,
+                    marginBottom: '8px',
+                  }}
+                >
+                  {proj.id}
+                </span>
+                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, lineHeight: 1.25, color: 'var(--text-primary)' }}>
+                  {proj.title}
+                </h3>
+                <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '10px', lineHeight: 1.5 }}>
+                  {proj.tags}
+                </p>
+              </div>
+
+              <div
+                style={{
+                  width: '36px',
+                  height: '36px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--btn-secondary-bg)',
+                  border: '1px solid var(--border-subtle)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--text-primary)',
+                }}
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\components\FooterSection.tsx ===
+import React from 'react';
+
+export const FooterSection: React.FC = () => {
+  return (
+    <footer
+      id="contact"
+      style={{
+        padding: '8rem 4rem 3rem',
+        borderTop: '1px solid var(--border-subtle)',
+        backgroundColor: 'var(--bg-secondary)',
+      }}
+    >
+      <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
+          <div>
+            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+              Have an idea<br />worth building?
+            </h2>
+            <div style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+              Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
+            </div>
+            <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', fontSize: '1.05rem' }}>
+              Letâ€™s make it real.
+            </p>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '2rem' }}>
+            <a
+              href="mailto:contact@joshandco.dev"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '14px 28px',
+                borderRadius: '9999px',
+                backgroundColor: 'var(--btn-primary-bg)',
+                color: 'var(--btn-primary-text)',
+                fontSize: '0.9rem',
+                fontWeight: 600,
+                boxShadow: 'var(--shadow-card)',
+              }}
+            >
+              Start a Conversation
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </a>
+
+            <div style={{ display: 'flex', gap: '1.25rem', color: 'var(--text-secondary)' }}>
+              <a href="#" aria-label="GitHub" style={{ color: 'inherit' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg>
+              </a>
+              <a href="#" aria-label="LinkedIn" style={{ color: 'inherit' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </a>
+              <a href="mailto:contact@joshandco.dev" aria-label="Email" style={{ color: 'inherit' }}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+          <div>Â© {new Date().getFullYear()} Josh & Co. All rights reserved.</div>
+          <div>Building systems. Crafting stories. Delivering impact.</div>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\components\Hero.tsx ===
+import React from 'react';
+import { ProfilePhoto } from './ProfilePhoto';
+
+export const Hero: React.FC = () => {
+  return (
+    <section
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        padding: '0 4rem',
+        overflow: 'hidden',
+        background: 'var(--hero-radial)',
+        backgroundColor: 'var(--bg-primary)',
+      }}
+    >
+      <div style={{ maxWidth: '640px', zIndex: 2, paddingTop: '3rem' }}>
+        <p
+          style={{
+            fontSize: '0.78rem',
+            letterSpacing: '0.18em',
+            textTransform: 'uppercase',
+            fontWeight: 700,
+            color: 'var(--accent-text-gradient)',
+            marginBottom: '1.25rem',
+          }}
+        >
+          Creative Engineer Â· Storyteller Â· Problem Solver
+        </p>
+
+        <h1
+          style={{
+            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+            lineHeight: 1.05,
+            fontWeight: 800,
+            letterSpacing: '-0.035em',
+            color: 'var(--text-primary)',
+            marginBottom: '1.5rem',
+          }}
+        >
+          I build. I direct.<br />
+          I make ideas real.
+        </h1>
+
+        <p
+          style={{
+            fontSize: '1.05rem',
+            lineHeight: 1.6,
+            color: 'var(--text-secondary)',
+            maxWidth: '460px',
+            marginBottom: '2rem',
+          }}
+        >
+          Software engineering, AI systems, visual storytelling, and execution â€” crafted under one creative studio.
+        </p>
+
+        <div style={{ fontSize: '2.2rem', fontWeight: 700, marginBottom: '2.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+          Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
+        </div>
+
+        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+          <a
+            href="#work"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              backgroundColor: 'var(--btn-primary-bg)',
+              color: 'var(--btn-primary-text)',
+              padding: '13px 26px',
+              borderRadius: '9999px',
+              fontWeight: 600,
+              fontSize: '0.9rem',
+              boxShadow: 'var(--shadow-card)',
+            }}
+          >
+            Explore My Work
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <line x1="7" y1="17" x2="17" y2="7" />
+              <polyline points="7 7 17 7 17 17" />
+            </svg>
+          </a>
+
+          <a
+            href="#contact"
+            style={{
+              padding: '13px 26px',
+              borderRadius: '9999px',
+              border: '1px solid var(--btn-secondary-border)',
+              backgroundColor: 'var(--btn-secondary-bg)',
+              color: 'var(--btn-secondary-text)',
+              fontWeight: 500,
+              fontSize: '0.9rem',
+            }}
+          >
+            Letâ€™s Build Something
+          </a>
+        </div>
+      </div>
+
+      <div
+        style={{
+          position: 'absolute',
+          right: '5%',
+          top: '50%',
+          transform: 'translateY(-45%)',
+          width: '540px',
+          height: '680px',
+          zIndex: 1,
+        }}
+      >
+        <ProfilePhoto variant="hero" />
+
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '220px',
+            left: '-110px',
+            background: 'var(--code-snippet-bg)',
+            backdropFilter: 'blur(16px)',
+            border: '1px solid var(--code-snippet-border)',
+            borderRadius: '16px',
+            padding: '16px 22px',
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.74rem',
+            boxShadow: 'var(--code-snippet-shadow)',
+          }}
+        >
+          <div style={{ color: 'var(--text-muted)', marginBottom: '4px' }}>// Execution Pipeline</div>
+          <div><span style={{ color: 'var(--accent-purple)', fontWeight: 600 }}>def</span> <span style={{ color: 'var(--accent-blue)' }}>build_idea</span>(vision):</div>
+          <div style={{ paddingLeft: '14px', color: 'var(--text-secondary)' }}>strategy = Architect()</div>
+          <div style={{ paddingLeft: '14px', color: 'var(--text-secondary)' }}>system = Engineer()</div>
+          <div style={{ paddingLeft: '14px', color: 'var(--text-secondary)' }}>story = Visualize()</div>
+          <div style={{ paddingLeft: '14px', color: 'var(--accent-purple)' }}>return <span style={{ color: 'var(--accent-emerald)', fontWeight: 600 }}>Execute</span>(vision)</div>
+        </div>
+
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '100px',
+            left: '-20px',
+            background: 'var(--code-snippet-bg)',
+            backdropFilter: 'blur(16px)',
+            border: '1px solid var(--code-snippet-border)',
+            borderRadius: '16px',
+            padding: '14px 20px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '14px',
+            boxShadow: 'var(--code-snippet-shadow)',
+          }}
+        >
+          <div>
+            <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>AI Prompt Architecture</div>
+            <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
+              Structured prompts Â· Few-shot systems
+            </div>
+          </div>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" strokeWidth="2">
+            <circle cx="6" cy="6" r="3" />
+            <circle cx="18" cy="6" r="3" />
+            <circle cx="12" cy="18" r="3" />
+            <line x1="8.5" y1="7.5" x2="15.5" y2="7.5" />
+            <line x1="7.5" y1="8.5" x2="10.5" y2="15.5" />
+            <line x1="16.5" y1="8.5" x2="13.5" y2="15.5" />
+          </svg>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\components\Navbar.tsx ===
+import React from 'react';
+import { ThemeToggle } from './ThemeToggle';
+
+export const Navbar: React.FC = () => {
+  return (
+    <header
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 100,
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: '1.1rem 4rem',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        backgroundColor: 'var(--bg-nav)',
+        borderBottom: '1px solid var(--border-subtle)',
+      }}
+    >
+      <div style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+        Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
+      </div>
+
+      <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
+        {['Work', 'About', 'Process', 'Capabilities', 'Contact'].map((item) => (
+          <a
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            style={{
+              fontSize: '0.875rem',
+              fontWeight: 500,
+              color: 'var(--text-secondary)',
+            }}
+          >
+            {item}
+          </a>
+        ))}
+      </nav>
+
+      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+        <ThemeToggle />
+        <a
+          href="#contact"
+          style={{
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '6px',
+            backgroundColor: 'var(--btn-primary-bg)',
+            color: 'var(--btn-primary-text)',
+            padding: '9px 20px',
+            borderRadius: '9999px',
+            fontSize: '0.85rem',
+            fontWeight: 600,
+            boxShadow: 'var(--shadow-subtle)',
+          }}
+        >
+          Letâ€™s Build
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+            <line x1="7" y1="17" x2="17" y2="7" />
+            <polyline points="7 7 17 7 17 17" />
+          </svg>
+        </a>
+      </div>
+    </header>
+  );
+};
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\components\ProfilePhoto.tsx ===
+import React, { useState } from 'react';
+
+interface ProfilePhotoProps {
+  variant?: 'hero' | 'about';
+  className?: string;
+}
+
+export const PROFILE_IMAGE_URL = '/profile-photo.jpg';
+
+export const ProfilePhoto: React.FC<ProfilePhotoProps> = ({ variant = 'hero', className = '' }) => {
+  const [hasError, setHasError] = useState(false);
+
+  return (
+    <div
+      className={className}
+      style={{
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        borderRadius: variant === 'about' ? '24px' : '20px',
+        overflow: 'hidden',
+        backgroundColor: 'var(--bg-secondary)',
+        border: variant === 'about' ? '1px solid var(--border-subtle)' : 'none',
+        boxShadow: variant === 'about' ? 'var(--shadow-card)' : 'none',
+      }}
+    >
+      {!hasError ? (
+        <img
+          src={PROFILE_IMAGE_URL}
+          alt="Oni Joshua Adeola"
+          onError={() => setHasError(true)}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            objectPosition: 'center top',
+            display: 'block',
+          }}
+        />
+      ) : (
+        <div
+          style={{
+            width: '100%',
+            height: '100%',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            color: 'var(--text-muted)',
+            fontSize: '0.85rem',
+          }}
+        >
+          [ Image Not Found ]
+        </div>
+      )}
+
+      {variant === 'about' && (
+        <div
+          style={{
+            position: 'absolute',
+            bottom: '24px',
+            left: '24px',
+            fontFamily: 'serif',
+            fontStyle: 'italic',
+            fontSize: '1.5rem',
+            color: '#ffffff',
+            textShadow: '0 2px 12px rgba(0, 0, 0, 0.8)',
+            pointerEvents: 'none',
+          }}
+        >
+          Oni Joshua
+        </div>
+      )}
+    </div>
+  );
+};
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\components\SignatureStatement.tsx ===
+import React from 'react';
+
+export const SignatureStatement: React.FC = () => {
+  return (
+    <section
+      style={{
+        padding: '10rem 2rem',
+        textAlign: 'center',
+        background: 'var(--signature-radial)',
+        backgroundColor: 'var(--bg-primary)',
+      }}
+    >
+      <div style={{ maxWidth: '1000px', margin: '0 auto' }}>
+        <h2
+          style={{
+            fontSize: 'clamp(2.5rem, 5.5vw, 5rem)',
+            fontWeight: 800,
+            lineHeight: 1.15,
+            letterSpacing: '-0.035em',
+            color: 'var(--text-primary)',
+          }}
+        >
+          Technology is my foundation.<br />
+          <span
+            style={{
+              background: 'var(--accent-text-gradient)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+            }}
+          >
+            Creativity is my edge.
+          </span>
+        </h2>
+      </div>
+    </section>
+  );
+};
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\components\ThemeToggle.tsx ===
+import React, { useEffect, useState } from 'react';
+
+export const ThemeToggle: React.FC = () => {
+  const [theme, setTheme] = useState<'light' | 'dark'>('light');
+
+  useEffect(() => {
+    const currentTheme = (document.documentElement.getAttribute('data-theme') as 'light' | 'dark') || 'light';
+    setTheme(currentTheme);
+  }, []);
+
+  const handleToggle = () => {
+    const nextTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(nextTheme);
+    document.documentElement.setAttribute('data-theme', nextTheme);
+    localStorage.setItem('theme', nextTheme);
+  };
+
+  return (
+    <button
+      onClick={handleToggle}
+      type="button"
+      aria-label="Toggle theme"
+      style={{
+        display: 'inline-flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: '38px',
+        height: '38px',
+        borderRadius: '50%',
+        backgroundColor: 'var(--btn-secondary-bg)',
+        border: '1px solid var(--border-subtle)',
+        cursor: 'pointer',
+        boxShadow: 'var(--shadow-subtle)',
+      }}
+    >
+      <svg
+        className="theme-icon-sun"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#F59E0B"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <circle cx="12" cy="12" r="4" />
+        <line x1="12" y1="2" x2="12" y2="4" />
+        <line x1="12" y1="20" x2="12" y2="22" />
+        <line x1="4.93" y1="4.93" x2="6.34" y2="6.34" />
+        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07" />
+        <line x1="2" y1="12" x2="4" y2="12" />
+        <line x1="20" y1="12" x2="22" y2="12" />
+        <line x1="4.93" y1="19.07" x2="6.34" y2="17.66" />
+        <line x1="17.66" y1="6.34" x2="19.07" y2="4.93" />
+      </svg>
+
+      <svg
+        className="theme-icon-moon"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="#B59FFF"
+        strokeWidth="2.2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
+  );
+};
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\pages\api\hello.ts ===
+// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import type { NextApiRequest, NextApiResponse } from "next";
+
+type Data = {
+  name: string;
+};
+
+export default function handler(
+  req: NextApiRequest,
+  res: NextApiResponse<Data>,
+) {
+  res.status(200).json({ name: "John Doe" });
+}
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\pages\index.tsx ===
+import Head from 'next/head';
+import { Navbar } from '../components/Navbar';
+import { Hero } from '../components/Hero';
+import { AboutSection } from '../components/AboutSection';
+import { FeaturedWork } from '../components/FeaturedWork';
+import { SignatureStatement } from '../components/SignatureStatement';
+import { CapabilitiesSection } from '../components/CapabilitiesSection';
+import { FooterSection } from '../components/FooterSection';
+
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Josh & Co. â€” Oni Joshua Adeola</title>
+        <meta
+          name="description"
+          content="Multidisciplinary software engineer, AI prompt architect, project executor, and visual creator."
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <main style={{ minHeight: '100vh', backgroundColor: 'var(--bg-primary)' }}>
+        <Navbar />
+        <Hero />
+        <AboutSection />
+        <FeaturedWork />
+        <SignatureStatement />
+        <CapabilitiesSection />
+        <FooterSection />
+      </main>
+    </>
+  );
+}
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\pages\_app.tsx ===
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+
+export default function App({ Component, pageProps }: AppProps) {
+  return <Component {...pageProps} />;
+}
+
+
+
+=== FILE: C:\Users\DELL\Desktop\joshandco-web\pages\_document.tsx ===
+import { Html, Head, Main, NextScript } from 'next/document';
+
+export default function Document() {
+  const themeInitializerScript = `
+    (function() {
+      try {
+        var storedTheme = localStorage.getItem('theme');
+        if (storedTheme) {
+          document.documentElement.setAttribute('data-theme', storedTheme);
+        } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+        }
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  `;
+
+  return (
+    <Html lang="en" data-theme="light">
+      <Head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitializerScript }} />
+      </Head>
+      <body>
+        <Main />
+        <NextScript />
+      </body>
+    </Html>
+  );
+}
+
+
+

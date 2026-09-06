@@ -40,9 +40,9 @@ const PROJECTS = [
 
 export const FeaturedWork: React.FC = () => {
   return (
-    <section id="work" style={{ padding: '7rem 4rem', backgroundColor: 'var(--bg-secondary)' }}>
+    <section id="work" style={{ padding: 'clamp(4rem, 7vw, 7rem) clamp(1.25rem, 4vw, 4rem)', backgroundColor: 'var(--bg-secondary)' }}>
       <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
             <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
               Featured Work
@@ -57,19 +57,20 @@ export const FeaturedWork: React.FC = () => {
               display: 'flex',
               alignItems: 'center',
               gap: '6px',
+              textDecoration: 'none',
             }}
           >
             View All Projects →
           </a>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1.25rem' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: '1.25rem' }}>
           {PROJECTS.map((proj) => (
             <div
               key={proj.id}
               style={{
                 position: 'relative',
-                height: '420px',
+                minHeight: '380px',
                 borderRadius: '24px',
                 padding: '24px',
                 background: proj.themeBackground,
@@ -112,6 +113,7 @@ export const FeaturedWork: React.FC = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   color: 'var(--text-primary)',
+                  alignSelf: 'flex-start',
                 }}
               >
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">

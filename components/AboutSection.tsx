@@ -56,14 +56,14 @@ const METRICS = [
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" style={{ padding: '8rem 4rem', maxWidth: '1240px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.25fr', gap: '5rem', alignItems: 'center' }}>
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <div style={{ width: '280px', height: '380px' }}>
+    <section id="about" style={{ padding: 'clamp(4rem, 8vw, 8rem) clamp(1.25rem, 4vw, 4rem)', maxWidth: '1240px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2.5rem, 5vw, 5rem)', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center' }}>
+          <div style={{ width: '100%', maxWidth: '320px', aspectRatio: '3 / 4' }}>
             <ProfilePhoto variant="about" />
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', width: '100%' }}>
             {ROLES.map((role, i) => (
               <div
                 key={i}
@@ -74,8 +74,7 @@ export const AboutSection: React.FC = () => {
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border-subtle)',
                   borderRadius: '12px',
-                  padding: '10px 16px',
-                  width: '210px',
+                  padding: '10px 14px',
                   boxShadow: 'var(--shadow-subtle)',
                 }}
               >
@@ -93,7 +92,7 @@ export const AboutSection: React.FC = () => {
           <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
             About
           </span>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, margin: '0.75rem 0 0.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontWeight: 700, margin: '0.75rem 0 0.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
             Oni Joshua Adeola
           </h2>
           <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: 500 }}>
@@ -113,7 +112,7 @@ export const AboutSection: React.FC = () => {
               background: 'var(--bg-card-subtle)',
               border: '1px solid var(--border-subtle)',
               borderRadius: '14px',
-              marginBottom: '3rem',
+              marginBottom: '2.5rem',
             }}
           >
             <div
@@ -135,10 +134,10 @@ export const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '1.5rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '2rem' }}>
             {METRICS.map((m, i) => (
               <div key={i}>
-                <div style={{ fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>{m.value}</div>
+                <div style={{ fontSize: 'clamp(1.4rem, 3vw, 1.75rem)', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>{m.value}</div>
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '4px' }}>{m.label}</div>
               </div>
             ))}
