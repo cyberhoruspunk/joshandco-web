@@ -64,7 +64,7 @@ export const AboutSection: React.FC = () => {
           </div>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', width: '100%' }}>
-            {RORoles: ROLES.map((role, i) => (
+            {ROLES.map((role, i) => (
               <div
                 key={i}
                 style={{
