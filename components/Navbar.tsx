@@ -13,23 +13,38 @@ export const Navbar: React.FC = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '1rem clamp(1rem, 4vw, 4rem)',
+        padding: '0.85rem clamp(1rem, 3vw, 4rem)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         backgroundColor: 'var(--bg-nav)',
         borderBottom: '1px solid var(--border-subtle)',
+        gap: '1rem',
       }}
     >
-      <div style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+      {/* Brand */}
+      <div 
+        style={{ 
+          fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', 
+          fontWeight: 700, 
+          letterSpacing: '-0.02em', 
+          color: 'var(--text-primary)',
+          whiteSpace: 'nowrap',
+          flexShrink: 0,
+        }}
+      >
         Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
       </div>
 
+      {/* Navigation Links */}
       <nav
         style={{
           display: 'flex',
-          gap: 'clamp(1rem, 2vw, 2.5rem)',
+          gap: 'clamp(0.75rem, 1.8vw, 2rem)',
           alignItems: 'center',
-          flexWrap: 'wrap',
+          overflowX: 'auto',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          whiteSpace: 'nowrap',
         }}
       >
         {['Work', 'About', 'Capabilities', 'Contact'].map((item) => (
@@ -37,10 +52,11 @@ export const Navbar: React.FC = () => {
             key={item}
             href={`#${item.toLowerCase()}`}
             style={{
-              fontSize: '0.875rem',
+              fontSize: 'clamp(0.75rem, 1.8vw, 0.875rem)',
               fontWeight: 500,
               color: 'var(--text-secondary)',
               textDecoration: 'none',
+              flexShrink: 0,
             }}
           >
             {item}
@@ -48,19 +64,20 @@ export const Navbar: React.FC = () => {
         ))}
       </nav>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+      {/* Actions */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexShrink: 0 }}>
         <ThemeToggle />
         <a
           href="#contact"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '6px',
+            gap: '5px',
             backgroundColor: 'var(--btn-primary-bg)',
             color: 'var(--btn-primary-text)',
-            padding: '8px 16px',
+            padding: '7px 14px',
             borderRadius: '9999px',
-            fontSize: '0.85rem',
+            fontSize: 'clamp(0.75rem, 1.8vw, 0.85rem)',
             fontWeight: 600,
             textDecoration: 'none',
             boxShadow: 'var(--shadow-subtle)',
@@ -68,7 +85,7 @@ export const Navbar: React.FC = () => {
           }}
         >
           Let’s Build
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <line x1="7" y1="17" x2="17" y2="7" />
             <polyline points="7 7 17 7 17 17" />
           </svg>
