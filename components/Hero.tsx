@@ -64,7 +64,7 @@ export const Hero: React.FC = () => {
               marginBottom: '2rem',
             }}
           >
-            Software engineering, AI systems, visual storytelling, and execution — crafted under one creative studio.
+            Software engineering, AI systems, visual storytelling, and execution  crafted under one creative studio.
           </p>
 
           <div style={{ fontSize: '2.2rem', fontWeight: 700, marginBottom: '2.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>

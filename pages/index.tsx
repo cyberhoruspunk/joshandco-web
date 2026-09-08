@@ -27,7 +27,7 @@ export default function Home() {
     <>
       <Head>
         {/* Primary Page Title & Core SEO */}
-        <title>Josh & Co. — Oni Joshua Adeola | Software Engineer & AI Architect</title>
+        <title>Josh & Co.  Oni Joshua Adeola | Software Engineer & AI Architect</title>
         <meta
           name="description"
           content="Official portfolio of Josh & Co. (Oni Joshua Adeola). Multidisciplinary Software Engineer, AI Prompt Architect, and Visual Creator based in Nigeria."

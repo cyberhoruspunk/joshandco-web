@@ -57,14 +57,14 @@ const METRICS = [
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" style={{ padding: '8rem 4rem', maxWidth: '1240px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1.25fr', gap: '5rem', alignItems: 'center' }}>
-        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
-          <div style={{ width: '280px', height: '380px' }}>
+    <section id="about" style={{ padding: 'clamp(4rem, 8vw, 8rem) clamp(1.25rem, 4vw, 4rem)', maxWidth: '1240px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 320px), 1fr))', gap: 'clamp(2.5rem, 5vw, 5rem)', alignItems: 'center' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', alignItems: 'center' }}>
+          <div style={{ width: '100%', maxWidth: '320px', aspectRatio: '3 / 4' }}>
             <ProfilePhoto variant="about" />
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', width: '100%' }}>
             {ROLES.map((role, i) => (
               <div
                 key={i}
@@ -75,8 +75,7 @@ export const AboutSection: React.FC = () => {
                   background: 'var(--bg-card)',
                   border: '1px solid var(--border-subtle)',
                   borderRadius: '12px',
-                  padding: '10px 16px',
-                  width: '210px',
+                  padding: '10px 14px',
                   boxShadow: 'var(--shadow-subtle)',
                 }}
               >
@@ -94,7 +93,7 @@ export const AboutSection: React.FC = () => {
           <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
             About
           </span>
-          <h2 style={{ fontSize: '2.5rem', fontWeight: 700, margin: '0.75rem 0 0.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+          <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontWeight: 700, margin: '0.75rem 0 0.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
             Oni Joshua Adeola
           </h2>
           <p style={{ fontSize: '0.95rem', color: 'var(--text-secondary)', marginBottom: '1.5rem', fontWeight: 500 }}>
@@ -114,7 +113,7 @@ export const AboutSection: React.FC = () => {
               background: 'var(--bg-card-subtle)',
               border: '1px solid var(--border-subtle)',
               borderRadius: '14px',
-              marginBottom: '3rem',
+              marginBottom: '2.5rem',
             }}
           >
             <div
@@ -136,10 +135,10 @@ export const AboutSection: React.FC = () => {
             </div>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(110px, 1fr))', gap: '1.5rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '2rem' }}>
             {METRICS.map((m, i) => (
               <div key={i}>
-                <div style={{ fontSize: '1.75rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>{m.value}</div>
+                <div style={{ fontSize: 'clamp(1.4rem, 3vw, 1.75rem)', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>{m.value}</div>
                 <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '4px' }}>{m.label}</div>
               </div>
             ))}
@@ -153,7 +152,7 @@ export const AboutSection: React.FC = () => {
 
 
 === FILE: C:\Users\DELL\Desktop\joshandco-web\components\CapabilitiesSection.tsx ===
-import React from 'react';
+import React, { useRef } from 'react';
 
 const CAPABILITIES = [
   {
@@ -167,7 +166,7 @@ const CAPABILITIES = [
     desc: 'Full-stack web applications, real-time systems, backend architecture.',
     points: ['Scalable', 'Reliable', 'Performant'],
     graphic: (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
         <polygon points="32 6 56 18 32 30 8 18" />
         <polygon points="32 22 56 34 32 46 8 34" />
         <polygon points="32 38 56 50 32 62 8 50" />
@@ -185,7 +184,7 @@ const CAPABILITIES = [
     desc: 'Prompt engineering, AI workflows, evaluation systems, structured prompting.',
     points: ['Intelligent', 'Adaptive', 'Measurable'],
     graphic: (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
         <circle cx="32" cy="32" r="6" />
         <circle cx="16" cy="20" r="4" />
         <circle cx="48" cy="20" r="4" />
@@ -209,7 +208,7 @@ const CAPABILITIES = [
     desc: 'Mobile cinematography, color grading, portrait retouching, visual direction.',
     points: ['Cinematic', 'Impactful', 'Memorable'],
     graphic: (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
         <circle cx="32" cy="32" r="26" />
         <circle cx="32" cy="32" r="18" strokeDasharray="4 4" />
         <circle cx="32" cy="32" r="8" />
@@ -226,7 +225,7 @@ const CAPABILITIES = [
     desc: 'Project management, sprint planning, QA, delivery, and technical coordination.',
     points: ['Organized', 'Efficient', 'Results-driven'],
     graphic: (
-      <svg width="64" height="64" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
+      <svg width="56" height="56" viewBox="0 0 64 64" fill="none" stroke="var(--border-medium)" strokeWidth="1.5">
         <rect x="10" y="14" width="44" height="36" rx="4" />
         <line x1="16" y1="24" x2="36" y2="24" />
         <line x1="16" y1="32" x2="48" y2="32" />
@@ -237,36 +236,116 @@ const CAPABILITIES = [
 ];
 
 export const CapabilitiesSection: React.FC = () => {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (sliderRef.current) {
+      const scrollAmount = direction === 'left' ? -320 : 320;
+      sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="capabilities" style={{ padding: '7rem 4rem', maxWidth: '1360px', margin: '0 auto', backgroundColor: 'var(--bg-primary)' }}>
-      <div style={{ marginBottom: '2.5rem' }}>
-        <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
-          Experience / Capabilities
-        </span>
+    <section id="capabilities" style={{ padding: 'clamp(4rem, 8vw, 7rem) 0', backgroundColor: 'var(--bg-primary)', overflow: 'hidden' }}>
+      <div style={{ maxWidth: '1360px', margin: '0 auto', padding: '0 clamp(1.25rem, 4vw, 4rem)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
+          <div>
+            <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
+              Experience / Capabilities
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)', marginTop: '0.4rem' }}>
+              Core Disciplines
+            </h2>
+          </div>
+
+          {/* Navigation Controls */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <button
+              onClick={() => scroll('left')}
+              aria-label="Previous Capability"
+              type="button"
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--btn-secondary-bg)',
+                border: '1px solid var(--border-subtle)',
+                color: 'var(--text-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                boxShadow: 'var(--shadow-subtle)',
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              aria-label="Next Capability"
+              type="button"
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--btn-secondary-bg)',
+                border: '1px solid var(--border-subtle)',
+                color: 'var(--text-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                boxShadow: 'var(--shadow-subtle)',
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem' }}>
+      {/* Swipeable Track */}
+      <div
+        ref={sliderRef}
+        style={{
+          display: 'flex',
+          gap: '1.5rem',
+          overflowX: 'auto',
+          scrollSnapType: 'x mandatory',
+          padding: '1.5rem clamp(1.25rem, 4vw, 4rem) 2.5rem',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
         {CAPABILITIES.map((cap, i) => (
           <div
             key={i}
             style={{
+              flex: '0 0 clamp(270px, 75vw, 340px)',
+              scrollSnapAlign: 'start',
               background: 'var(--bg-card)',
               border: '1px solid var(--border-subtle)',
-              borderRadius: '20px',
+              borderRadius: '24px',
               padding: '28px',
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'space-between',
-              minHeight: '380px',
+              minHeight: '390px',
               boxShadow: 'var(--shadow-card)',
+              cursor: 'pointer',
             }}
           >
             <div>
               <div
                 style={{
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '10px',
+                  width: '42px',
+                  height: '42px',
+                  borderRadius: '12px',
                   background: 'var(--btn-secondary-bg)',
                   border: '1px solid var(--border-subtle)',
                   display: 'flex',
@@ -279,22 +358,26 @@ export const CapabilitiesSection: React.FC = () => {
                 {cap.icon}
               </div>
 
-              <h3 style={{ fontSize: '1.35rem', fontWeight: 600, marginBottom: '0.75rem', color: 'var(--text-primary)' }}>{cap.title}</h3>
+              <h3 style={{ fontSize: '1.3rem', fontWeight: 600, marginBottom: '0.75rem', color: 'var(--text-primary)' }}>
+                {cap.title}
+              </h3>
               <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem' }}>
                 {cap.desc}
               </p>
 
-              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px', padding: 0, margin: 0 }}>
                 {cap.points.map((pt, idx) => (
-                  <li key={idx} style={{ fontSize: '0.75rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <span style={{ width: '4px', height: '4px', borderRadius: '50%', backgroundColor: 'var(--text-muted)' }} />
+                  <li key={idx} style={{ fontSize: '0.78rem', color: 'var(--text-muted)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <span style={{ width: '5px', height: '5px', borderRadius: '50%', backgroundColor: 'var(--text-muted)' }} />
                     {pt}
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.5rem' }}>{cap.graphic}</div>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '1.5rem' }}>
+              {cap.graphic}
+            </div>
           </div>
         ))}
       </div>
@@ -305,7 +388,7 @@ export const CapabilitiesSection: React.FC = () => {
 
 
 === FILE: C:\Users\DELL\Desktop\joshandco-web\components\FeaturedWork.tsx ===
-import React from 'react';
+import React, { useRef } from 'react';
 
 const PROJECTS = [
   {
@@ -346,89 +429,153 @@ const PROJECTS = [
 ];
 
 export const FeaturedWork: React.FC = () => {
+  const sliderRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (sliderRef.current) {
+      const scrollAmount = direction === 'left' ? -340 : 340;
+      sliderRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <section id="work" style={{ padding: '7rem 4rem', backgroundColor: 'var(--bg-secondary)' }}>
-      <div style={{ maxWidth: '1360px', margin: '0 auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem' }}>
+    <section id="work" style={{ padding: 'clamp(4rem, 8vw, 7rem) 0', backgroundColor: 'var(--bg-secondary)', overflow: 'hidden' }}>
+      <div style={{ maxWidth: '1360px', margin: '0 auto', padding: '0 clamp(1.25rem, 4vw, 4rem)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2rem', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
             <span style={{ fontSize: '0.75rem', letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--text-muted)', fontWeight: 700 }}>
               Featured Work
             </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.4rem)', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)', marginTop: '0.4rem' }}>
+              Selected Projects
+            </h2>
           </div>
-          <a
-            href="#all-projects"
-            style={{
-              fontSize: '0.85rem',
-              fontWeight: 600,
-              color: 'var(--accent-text-gradient)',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '6px',
-            }}
-          >
-            View All Projects â†’
-          </a>
-        </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(5, 1fr)', gap: '1.25rem' }}>
-          {PROJECTS.map((proj) => (
-            <div
-              key={proj.id}
+          {/* Navigation Controls */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+            <button
+              onClick={() => scroll('left')}
+              aria-label="Previous Project"
+              type="button"
               style={{
-                position: 'relative',
-                height: '420px',
-                borderRadius: '24px',
-                padding: '24px',
-                background: proj.themeBackground,
+                width: '42px',
+                height: '42px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--btn-secondary-bg)',
                 border: '1px solid var(--border-subtle)',
-                boxShadow: 'var(--shadow-card)',
+                color: 'var(--text-primary)',
                 display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
+                alignItems: 'center',
+                justifyContent: 'center',
                 cursor: 'pointer',
+                boxShadow: 'var(--shadow-subtle)',
               }}
             >
-              <div>
-                <span
-                  style={{
-                    display: 'inline-block',
-                    fontSize: '0.75rem',
-                    fontWeight: 700,
-                    color: proj.badgeColor,
-                    marginBottom: '8px',
-                  }}
-                >
-                  {proj.id}
-                </span>
-                <h3 style={{ fontSize: '1.15rem', fontWeight: 700, lineHeight: 1.25, color: 'var(--text-primary)' }}>
-                  {proj.title}
-                </h3>
-                <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '10px', lineHeight: 1.5 }}>
-                  {proj.tags}
-                </p>
-              </div>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="15 18 9 12 15 6" />
+              </svg>
+            </button>
+            <button
+              onClick={() => scroll('right')}
+              aria-label="Next Project"
+              type="button"
+              style={{
+                width: '42px',
+                height: '42px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--btn-secondary-bg)',
+                border: '1px solid var(--border-subtle)',
+                color: 'var(--text-primary)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                cursor: 'pointer',
+                boxShadow: 'var(--shadow-subtle)',
+              }}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <polyline points="9 18 15 12 9 6" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
 
-              <div
+      {/* Swipeable Track */}
+      <div
+        ref={sliderRef}
+        style={{
+          display: 'flex',
+          gap: '1.5rem',
+          overflowX: 'auto',
+          scrollSnapType: 'x mandatory',
+          padding: '1.5rem clamp(1.25rem, 4vw, 4rem) 2.5rem',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          WebkitOverflowScrolling: 'touch',
+        }}
+      >
+        {PROJECTS.map((proj) => (
+          <div
+            key={proj.id}
+            style={{
+              flex: '0 0 clamp(280px, 75vw, 360px)',
+              scrollSnapAlign: 'start',
+              position: 'relative',
+              height: '440px',
+              borderRadius: '24px',
+              padding: '28px',
+              background: proj.themeBackground,
+              border: '1px solid var(--border-subtle)',
+              boxShadow: 'var(--shadow-card)',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'space-between',
+              cursor: 'pointer',
+              transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+            }}
+          >
+            <div>
+              <span
                 style={{
-                  width: '36px',
-                  height: '36px',
-                  borderRadius: '50%',
-                  backgroundColor: 'var(--btn-secondary-bg)',
-                  border: '1px solid var(--border-subtle)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: 'var(--text-primary)',
+                  display: 'inline-block',
+                  fontSize: '0.75rem',
+                  fontWeight: 700,
+                  color: proj.badgeColor,
+                  marginBottom: '10px',
+                  letterSpacing: '0.05em',
                 }}
               >
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <line x1="7" y1="17" x2="17" y2="7" />
-                  <polyline points="7 7 17 7 17 17" />
-                </svg>
-              </div>
+                {proj.id}
+              </span>
+              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.3, color: 'var(--text-primary)' }}>
+                {proj.title}
+              </h3>
+              <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '14px', lineHeight: 1.6 }}>
+                {proj.tags}
+              </p>
             </div>
-          ))}
-        </div>
+
+            <div
+              style={{
+                width: '38px',
+                height: '38px',
+                borderRadius: '50%',
+                backgroundColor: 'var(--btn-secondary-bg)',
+                border: '1px solid var(--border-subtle)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: 'var(--text-primary)',
+              }}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );
@@ -444,18 +591,18 @@ export const FooterSection: React.FC = () => {
     <footer
       id="contact"
       style={{
-        padding: '8rem 4rem 3rem',
+        padding: 'clamp(4rem, 8vw, 8rem) clamp(1.25rem, 4vw, 4rem) 3rem',
         borderTop: '1px solid var(--border-subtle)',
         backgroundColor: 'var(--bg-secondary)',
       }}
     >
       <div style={{ maxWidth: '1240px', margin: '0 auto' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '6rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '4rem', flexWrap: 'wrap', gap: '2.5rem' }}>
           <div>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 700, letterSpacing: '-0.03em', color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
               Have an idea<br />worth building?
             </h2>
-            <div style={{ fontSize: '2.5rem', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+            <div style={{ fontSize: 'clamp(1.8rem, 4vw, 2.5rem)', fontWeight: 800, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
               Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
             </div>
             <p style={{ color: 'var(--text-secondary)', marginTop: '0.5rem', fontSize: '1.05rem' }}>
@@ -463,7 +610,7 @@ export const FooterSection: React.FC = () => {
             </p>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '2rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: '2rem' }}>
             <a
               href="mailto:contact@joshandco.dev"
               style={{
@@ -476,6 +623,7 @@ export const FooterSection: React.FC = () => {
                 color: 'var(--btn-primary-text)',
                 fontSize: '0.9rem',
                 fontWeight: 600,
+                textDecoration: 'none',
                 boxShadow: 'var(--shadow-card)',
               }}
             >
@@ -487,7 +635,7 @@ export const FooterSection: React.FC = () => {
             </a>
 
             <div style={{ display: 'flex', gap: '1.25rem', color: 'var(--text-secondary)' }}>
-              <a href="#" aria-label="GitHub" style={{ color: 'inherit' }}>
+              <a href="https://github.com/cyberhoruspunk" target="_blank" rel="noopener noreferrer" aria-label="GitHub" style={{ color: 'inherit' }}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
                   <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
                 </svg>
@@ -509,7 +657,7 @@ export const FooterSection: React.FC = () => {
           </div>
         </div>
 
-        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'var(--text-muted)', flexWrap: 'wrap', gap: '1rem' }}>
           <div>Â© {new Date().getFullYear()} Josh & Co. All rights reserved.</div>
           <div>Building systems. Crafting stories. Delivering impact.</div>
         </div>
@@ -532,162 +680,144 @@ export const Hero: React.FC = () => {
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
-        padding: '0 4rem',
+        padding: '7rem clamp(1.25rem, 5vw, 4rem) 4rem',
         overflow: 'hidden',
         background: 'var(--hero-radial)',
         backgroundColor: 'var(--bg-primary)',
       }}
     >
-      <div style={{ maxWidth: '640px', zIndex: 2, paddingTop: '3rem' }}>
-        <p
-          style={{
-            fontSize: '0.78rem',
-            letterSpacing: '0.18em',
-            textTransform: 'uppercase',
-            fontWeight: 700,
-            color: 'var(--accent-text-gradient)',
-            marginBottom: '1.25rem',
-          }}
-        >
-          Creative Engineer Â· Storyteller Â· Problem Solver
-        </p>
-
-        <h1
-          style={{
-            fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
-            lineHeight: 1.05,
-            fontWeight: 800,
-            letterSpacing: '-0.035em',
-            color: 'var(--text-primary)',
-            marginBottom: '1.5rem',
-          }}
-        >
-          I build. I direct.<br />
-          I make ideas real.
-        </h1>
-
-        <p
-          style={{
-            fontSize: '1.05rem',
-            lineHeight: 1.6,
-            color: 'var(--text-secondary)',
-            maxWidth: '460px',
-            marginBottom: '2rem',
-          }}
-        >
-          Software engineering, AI systems, visual storytelling, and execution â€” crafted under one creative studio.
-        </p>
-
-        <div style={{ fontSize: '2.2rem', fontWeight: 700, marginBottom: '2.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
-          Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
-        </div>
-
-        <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-          <a
-            href="#work"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '8px',
-              backgroundColor: 'var(--btn-primary-bg)',
-              color: 'var(--btn-primary-text)',
-              padding: '13px 26px',
-              borderRadius: '9999px',
-              fontWeight: 600,
-              fontSize: '0.9rem',
-              boxShadow: 'var(--shadow-card)',
-            }}
-          >
-            Explore My Work
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-              <line x1="7" y1="17" x2="17" y2="7" />
-              <polyline points="7 7 17 7 17 17" />
-            </svg>
-          </a>
-
-          <a
-            href="#contact"
-            style={{
-              padding: '13px 26px',
-              borderRadius: '9999px',
-              border: '1px solid var(--btn-secondary-border)',
-              backgroundColor: 'var(--btn-secondary-bg)',
-              color: 'var(--btn-secondary-text)',
-              fontWeight: 500,
-              fontSize: '0.9rem',
-            }}
-          >
-            Letâ€™s Build Something
-          </a>
-        </div>
-      </div>
-
       <div
         style={{
-          position: 'absolute',
-          right: '5%',
-          top: '50%',
-          transform: 'translateY(-45%)',
-          width: '540px',
-          height: '680px',
-          zIndex: 1,
+          width: '100%',
+          maxWidth: '1360px',
+          margin: '0 auto',
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 420px), 1fr))',
+          gap: 'clamp(2.5rem, 5vw, 5rem)',
+          alignItems: 'center',
+          zIndex: 2,
         }}
       >
-        <ProfilePhoto variant="hero" />
+        <div style={{ maxWidth: '640px' }}>
+          <p
+            style={{
+              fontSize: '0.78rem',
+              letterSpacing: '0.18em',
+              textTransform: 'uppercase',
+              fontWeight: 700,
+              color: 'var(--accent-text-gradient)',
+              marginBottom: '1.25rem',
+            }}
+          >
+            Creative Engineer Â· Storyteller Â· Problem Solver
+          </p>
 
-        <div
-          style={{
-            position: 'absolute',
-            bottom: '220px',
-            left: '-110px',
-            background: 'var(--code-snippet-bg)',
-            backdropFilter: 'blur(16px)',
-            border: '1px solid var(--code-snippet-border)',
-            borderRadius: '16px',
-            padding: '16px 22px',
-            fontFamily: 'var(--font-mono)',
-            fontSize: '0.74rem',
-            boxShadow: 'var(--code-snippet-shadow)',
-          }}
-        >
-          <div style={{ color: 'var(--text-muted)', marginBottom: '4px' }}>// Execution Pipeline</div>
-          <div><span style={{ color: 'var(--accent-purple)', fontWeight: 600 }}>def</span> <span style={{ color: 'var(--accent-blue)' }}>build_idea</span>(vision):</div>
-          <div style={{ paddingLeft: '14px', color: 'var(--text-secondary)' }}>strategy = Architect()</div>
-          <div style={{ paddingLeft: '14px', color: 'var(--text-secondary)' }}>system = Engineer()</div>
-          <div style={{ paddingLeft: '14px', color: 'var(--text-secondary)' }}>story = Visualize()</div>
-          <div style={{ paddingLeft: '14px', color: 'var(--accent-purple)' }}>return <span style={{ color: 'var(--accent-emerald)', fontWeight: 600 }}>Execute</span>(vision)</div>
+          <h1
+            style={{
+              fontSize: 'clamp(2.4rem, 6vw, 4.5rem)',
+              lineHeight: 1.08,
+              fontWeight: 800,
+              letterSpacing: '-0.035em',
+              color: 'var(--text-primary)',
+              marginBottom: '1.5rem',
+            }}
+          >
+            I build. I direct.<br />
+            I make ideas real.
+          </h1>
+
+          <p
+            style={{
+              fontSize: 'clamp(0.95rem, 2vw, 1.05rem)',
+              lineHeight: 1.6,
+              color: 'var(--text-secondary)',
+              maxWidth: '480px',
+              marginBottom: '2rem',
+            }}
+          >
+            Software engineering, AI systems, visual storytelling, and execution â€” crafted under one creative studio.
+          </p>
+
+          <div style={{ fontSize: '2.2rem', fontWeight: 700, marginBottom: '2.5rem', letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+            Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
+          </div>
+
+          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+            <a
+              href="#work"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                backgroundColor: 'var(--btn-primary-bg)',
+                color: 'var(--btn-primary-text)',
+                padding: '13px 26px',
+                borderRadius: '9999px',
+                fontWeight: 600,
+                fontSize: '0.9rem',
+                textDecoration: 'none',
+                boxShadow: 'var(--shadow-card)',
+              }}
+            >
+              Explore My Work
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <line x1="7" y1="17" x2="17" y2="7" />
+                <polyline points="7 7 17 7 17 17" />
+              </svg>
+            </a>
+
+            <a
+              href="#contact"
+              style={{
+                padding: '13px 26px',
+                borderRadius: '9999px',
+                border: '1px solid var(--btn-secondary-border)',
+                backgroundColor: 'var(--btn-secondary-bg)',
+                color: 'var(--btn-secondary-text)',
+                fontWeight: 500,
+                fontSize: '0.9rem',
+                textDecoration: 'none',
+              }}
+            >
+              Letâ€™s Build Something
+            </a>
+          </div>
         </div>
 
         <div
           style={{
-            position: 'absolute',
-            bottom: '100px',
-            left: '-20px',
-            background: 'var(--code-snippet-bg)',
-            backdropFilter: 'blur(16px)',
-            border: '1px solid var(--code-snippet-border)',
-            borderRadius: '16px',
-            padding: '14px 20px',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '14px',
-            boxShadow: 'var(--code-snippet-shadow)',
+            position: 'relative',
+            width: '100%',
+            maxWidth: '480px',
+            aspectRatio: '4 / 5',
+            margin: '0 auto',
           }}
         >
-          <div>
-            <div style={{ fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-primary)' }}>AI Prompt Architecture</div>
-            <div style={{ fontSize: '0.7rem', color: 'var(--text-secondary)', marginTop: '2px' }}>
-              Structured prompts Â· Few-shot systems
-            </div>
+          <ProfilePhoto variant="hero" />
+
+          <div
+            style={{
+              position: 'absolute',
+              bottom: '15%',
+              left: 'clamp(-10px, -4vw, -40px)',
+              background: 'var(--code-snippet-bg)',
+              backdropFilter: 'blur(16px)',
+              border: '1px solid var(--code-snippet-border)',
+              borderRadius: '16px',
+              padding: '14px 18px',
+              fontFamily: 'var(--font-mono)',
+              fontSize: 'clamp(0.68rem, 1.5vw, 0.74rem)',
+              boxShadow: 'var(--code-snippet-shadow)',
+              maxWidth: '90%',
+            }}
+          >
+            <div style={{ color: 'var(--text-muted)', marginBottom: '4px' }}>// Execution Pipeline</div>
+            <div><span style={{ color: 'var(--accent-purple)', fontWeight: 600 }}>def</span> <span style={{ color: 'var(--accent-blue)' }}>build_idea</span>(vision):</div>
+            <div style={{ paddingLeft: '14px', color: 'var(--text-secondary)' }}>strategy = Architect()</div>
+            <div style={{ paddingLeft: '14px', color: 'var(--text-secondary)' }}>system = Engineer()</div>
+            <div style={{ paddingLeft: '14px', color: 'var(--text-secondary)' }}>story = Visualize()</div>
+            <div style={{ paddingLeft: '14px', color: 'var(--accent-purple)' }}>return <span style={{ color: 'var(--accent-emerald)', fontWeight: 600 }}>Execute</span>(vision)</div>
           </div>
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent-purple)" strokeWidth="2">
-            <circle cx="6" cy="6" r="3" />
-            <circle cx="18" cy="6" r="3" />
-            <circle cx="12" cy="18" r="3" />
-            <line x1="8.5" y1="7.5" x2="15.5" y2="7.5" />
-            <line x1="7.5" y1="8.5" x2="10.5" y2="15.5" />
-            <line x1="16.5" y1="8.5" x2="13.5" y2="15.5" />
-          </svg>
         </div>
       </div>
     </section>
@@ -712,26 +842,50 @@ export const Navbar: React.FC = () => {
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '1.1rem 4rem',
+        padding: '0.85rem clamp(1rem, 3vw, 4rem)',
         backdropFilter: 'blur(20px)',
         WebkitBackdropFilter: 'blur(20px)',
         backgroundColor: 'var(--bg-nav)',
         borderBottom: '1px solid var(--border-subtle)',
+        gap: '1rem',
       }}
     >
-      <div style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>
+      {/* Brand */}
+      <div 
+        style={{ 
+          fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', 
+          fontWeight: 700, 
+          letterSpacing: '-0.02em', 
+          color: 'var(--text-primary)',
+          whiteSpace: 'nowrap',
+          flexShrink: 0,
+        }}
+      >
         Josh <span style={{ color: 'var(--text-secondary)', fontWeight: 400 }}>& Co.</span>
       </div>
 
-      <nav style={{ display: 'flex', gap: '2.5rem', alignItems: 'center' }}>
-        {['Work', 'About', 'Process', 'Capabilities', 'Contact'].map((item) => (
+      {/* Navigation Links */}
+      <nav
+        style={{
+          display: 'flex',
+          gap: 'clamp(0.75rem, 1.8vw, 2rem)',
+          alignItems: 'center',
+          overflowX: 'auto',
+          scrollbarWidth: 'none',
+          msOverflowStyle: 'none',
+          whiteSpace: 'nowrap',
+        }}
+      >
+        {['Work', 'About', 'Capabilities', 'Contact'].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
             style={{
-              fontSize: '0.875rem',
+              fontSize: 'clamp(0.75rem, 1.8vw, 0.875rem)',
               fontWeight: 500,
               color: 'var(--text-secondary)',
+              textDecoration: 'none',
+              flexShrink: 0,
             }}
           >
             {item}
@@ -739,25 +893,28 @@ export const Navbar: React.FC = () => {
         ))}
       </nav>
 
-      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+      {/* Actions */}
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexShrink: 0 }}>
         <ThemeToggle />
         <a
           href="#contact"
           style={{
             display: 'inline-flex',
             alignItems: 'center',
-            gap: '6px',
+            gap: '5px',
             backgroundColor: 'var(--btn-primary-bg)',
             color: 'var(--btn-primary-text)',
-            padding: '9px 20px',
+            padding: '7px 14px',
             borderRadius: '9999px',
-            fontSize: '0.85rem',
+            fontSize: 'clamp(0.75rem, 1.8vw, 0.85rem)',
             fontWeight: 600,
+            textDecoration: 'none',
             boxShadow: 'var(--shadow-subtle)',
+            whiteSpace: 'nowrap',
           }}
         >
           Letâ€™s Build
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
             <line x1="7" y1="17" x2="17" y2="7" />
             <polyline points="7 7 17 7 17 17" />
           </svg>
