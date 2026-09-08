@@ -27,7 +27,7 @@ export default function Home() {
     <>
       <Head>
         {/* Primary Page Title & Core SEO */}
-        <title>Josh & Co.  Oni Joshua Adeola | Software Engineer & AI Architect</title>
+        <title>Josh & Co. | Oni Joshua Adeola | Software Engineer & AI Architect</title>
         <meta
           name="description"
           content="Official portfolio of Josh & Co. (Oni Joshua Adeola). Multidisciplinary Software Engineer, AI Prompt Architect, and Visual Creator based in Nigeria."
@@ -39,25 +39,29 @@ export default function Home() {
         <meta name="author" content="Oni Joshua Adeola" />
         <link rel="canonical" href="https://joshandco.cc" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+
+        {/* Favicons & Brand Icon */}
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
 
         {/* Open Graph / Facebook / LinkedIn / WhatsApp */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://joshandco.cc/" />
-        <meta property="og:title" content="Josh & Co. — Oni Joshua Adeola" />
+        <meta property="og:title" content="Josh & Co. | Oni Joshua Adeola" />
         <meta
           property="og:description"
-          content="Software engineering, AI systems, visual storytelling, and execution — crafted under one creative studio."
+          content="Software engineering, AI systems, visual storytelling, and execution, crafted under one creative studio."
         />
         <meta property="og:image" content="https://joshandco.cc/profile-photo.jpg" />
 
         {/* Twitter / X */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://joshandco.cc/" />
-        <meta name="twitter:title" content="Josh & Co. — Oni Joshua Adeola" />
+        <meta name="twitter:title" content="Josh & Co. | Oni Joshua Adeola" />
         <meta
           name="twitter:description"
-          content="Software engineering, AI systems, visual storytelling, and execution — crafted under one creative studio."
+          content="Software engineering, AI systems, visual storytelling, and execution, crafted under one creative studio."
         />
         <meta name="twitter:image" content="https://joshandco.cc/profile-photo.jpg" />
 
