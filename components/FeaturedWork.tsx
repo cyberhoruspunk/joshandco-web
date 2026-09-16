@@ -1,16 +1,31 @@
 import React, { useRef } from 'react';
 
-const PROJECTS = [
-{
-  id: '01',
-  title: "TG's Beauty Cosmetics",
-  category: 'E-Commerce & Digital Architecture',
-  description: 'A minimalist digital store and catalog platform built to elevate cosmetics branding, featuring instant product discovery and direct WhatsApp order routing.',
-  tags: ['Next.js', 'Tailwind CSS', 'Vercel', 'TypeScript'],
-  liveUrl: 'https://cosmetic-portfolio.vercel.app',
-  githubUrl: 'https://github.com/cyberhoruspunk',
-  featured: true,
-},
+interface Project {
+  id: string;
+  title: string;
+  category?: string;
+  description?: string;
+  tags: string[] | string;
+  liveUrl?: string;
+  githubUrl?: string;
+  featured?: boolean;
+  themeBackground: string;
+  badgeColor: string;
+}
+
+const PROJECTS: Project[] = [
+  {
+    id: '01',
+    title: "TG's Beauty Cosmetics",
+    category: 'E-Commerce & Digital Architecture',
+    description: 'A minimalist digital store and catalog platform built to elevate cosmetics branding, featuring instant product discovery and direct WhatsApp order routing.',
+    tags: ['Next.js', 'Tailwind CSS', 'Vercel', 'TypeScript'],
+    liveUrl: 'https://cosmetic-portfolio.vercel.app',
+    githubUrl: 'https://github.com/cyberhoruspunk',
+    featured: true,
+    themeBackground: 'var(--card-project-1, #121212)',
+    badgeColor: '#0070F3',
+  },
   {
     id: '02',
     title: 'Web & Application Engineering',
@@ -128,67 +143,123 @@ export const FeaturedWork: React.FC = () => {
           WebkitOverflowScrolling: 'touch',
         }}
       >
-        {PROJECTS.map((proj) => (
-          <div
-            key={proj.id}
-            style={{
-              flex: '0 0 clamp(280px, 75vw, 360px)',
-              scrollSnapAlign: 'start',
-              position: 'relative',
-              height: '440px',
-              borderRadius: '24px',
-              padding: '28px',
-              background: proj.themeBackground,
-              border: '1px solid var(--border-subtle)',
-              boxShadow: 'var(--shadow-card)',
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              cursor: 'pointer',
-              transition: 'transform 0.25s ease, box-shadow 0.25s ease',
-            }}
-          >
-            <div>
-              <span
-                style={{
-                  display: 'inline-block',
-                  fontSize: '0.75rem',
-                  fontWeight: 700,
-                  color: proj.badgeColor,
-                  marginBottom: '10px',
-                  letterSpacing: '0.05em',
-                }}
-              >
-                {proj.id}
-              </span>
-              <h3 style={{ fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.3, color: 'var(--text-primary)' }}>
-                {proj.title}
-              </h3>
-              <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '14px', lineHeight: 1.6 }}>
-                {proj.tags}
-              </p>
-            </div>
+        {PROJECTS.map((proj) => {
+          const CardComponent = proj.liveUrl ? 'a' : 'div';
+          const linkProps = proj.liveUrl
+            ? { href: proj.liveUrl, target: '_blank', rel: 'noopener noreferrer' }
+            : {};
 
-            <div
+          return (
+            <CardComponent
+              key={proj.id}
+              {...linkProps}
               style={{
-                width: '38px',
-                height: '38px',
-                borderRadius: '50%',
-                backgroundColor: 'var(--btn-secondary-bg)',
+                flex: '0 0 clamp(280px, 75vw, 360px)',
+                scrollSnapAlign: 'start',
+                position: 'relative',
+                height: '440px',
+                borderRadius: '24px',
+                padding: '28px',
+                background: proj.themeBackground,
                 border: '1px solid var(--border-subtle)',
+                boxShadow: 'var(--shadow-card)',
                 display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                color: 'var(--text-primary)',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                cursor: 'pointer',
+                transition: 'transform 0.25s ease, box-shadow 0.25s ease',
+                textDecoration: 'none',
               }}
             >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                <line x1="7" y1="17" x2="17" y2="7" />
-                <polyline points="7 7 17 7 17 17" />
-              </svg>
-            </div>
-          </div>
-        ))}
+              <div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                  <span
+                    style={{
+                      display: 'inline-block',
+                      fontSize: '0.75rem',
+                      fontWeight: 700,
+                      color: proj.badgeColor,
+                      letterSpacing: '0.05em',
+                    }}
+                  >
+                    {proj.id}
+                  </span>
+                  {proj.liveUrl && (
+                    <span
+                      style={{
+                        fontSize: '0.65rem',
+                        fontWeight: 600,
+                        padding: '2px 8px',
+                        borderRadius: '12px',
+                        backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                        color: 'var(--text-primary)',
+                      }}
+                    >
+                      LIVE SITE ↗
+                    </span>
+                  )}
+                </div>
+
+                <h3 style={{ fontSize: '1.25rem', fontWeight: 700, lineHeight: 1.3, color: 'var(--text-primary)', marginTop: '10px' }}>
+                  {proj.title}
+                </h3>
+
+                {proj.description && (
+                  <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '8px', lineHeight: 1.5 }}>
+                    {proj.description}
+                  </p>
+                )}
+
+                {/* Web UI Preview Mockup for TG Beauty */}
+                {proj.id === '01' && (
+                  <div
+                    style={{
+                      marginTop: '14px',
+                      borderRadius: '8px',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                      backgroundColor: 'rgba(0, 0, 0, 0.3)',
+                      padding: '10px',
+                    }}
+                  >
+                    <div style={{ display: 'flex', gap: '4px', marginBottom: '8px' }}>
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#FF5F56' }} />
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#FFBD2E' }} />
+                      <div style={{ width: '6px', height: '6px', borderRadius: '50%', backgroundColor: '#27C93F' }} />
+                    </div>
+                    <div style={{ height: '8px', width: '40%', borderRadius: '4px', backgroundColor: 'rgba(255,255,255,0.2)', marginBottom: '6px' }} />
+                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '6px' }}>
+                      <div style={{ height: '36px', borderRadius: '4px', backgroundColor: 'rgba(255,255,255,0.08)' }} />
+                      <div style={{ height: '36px', borderRadius: '4px', backgroundColor: 'rgba(255,255,255,0.08)' }} />
+                    </div>
+                  </div>
+                )}
+
+                <p style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginTop: '14px', lineHeight: 1.6 }}>
+                  {Array.isArray(proj.tags) ? proj.tags.join(' • ') : proj.tags}
+                </p>
+              </div>
+
+              <div
+                style={{
+                  width: '38px',
+                  height: '38px',
+                  borderRadius: '50%',
+                  backgroundColor: 'var(--btn-secondary-bg)',
+                  border: '1px solid var(--border-subtle)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: 'var(--text-primary)',
+                }}
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                  <line x1="7" y1="17" x2="17" y2="7" />
+                  <polyline points="7 7 17 7 17 17" />
+                </svg>
+              </div>
+            </CardComponent>
+          );
+        })}
       </div>
     </section>
   );
