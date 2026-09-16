@@ -10,7 +10,7 @@ const PROJECTS = [
   liveUrl: 'https://cosmetic-portfolio.vercel.app',
   githubUrl: 'https://github.com/cyberhoruspunk',
   featured: true,
-}
+},
   {
     id: '02',
     title: 'Web & Application Engineering',
