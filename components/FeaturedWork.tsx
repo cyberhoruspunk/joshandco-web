@@ -1,13 +1,16 @@
 import React, { useRef } from 'react';
 
 const PROJECTS = [
-  {
-    id: '01',
-    title: 'Virtual Machine Escape Prevention System',
-    tags: 'Python, Flask, WebSockets, Cybersecurity Architecture.',
-    themeBackground: 'var(--card-project-1)',
-    badgeColor: '#0071E3',
-  },
+{
+  id: '01',
+  title: "TG's Beauty Cosmetics",
+  category: 'E-Commerce & Digital Architecture',
+  description: 'A minimalist digital store and catalog platform built to elevate cosmetics branding, featuring instant product discovery and direct WhatsApp order routing.',
+  tags: ['Next.js', 'Tailwind CSS', 'Vercel', 'TypeScript'],
+  liveUrl: 'https://cosmetic-portfolio.vercel.app',
+  githubUrl: 'https://github.com/cyberhoruspunk',
+  featured: true,
+}
   {
     id: '02',
     title: 'Web & Application Engineering',
