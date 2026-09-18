@@ -5,7 +5,7 @@ import { AboutSection } from '../components/AboutSection';
 import { FeaturedWork } from '../components/FeaturedWork';
 import { SignatureStatement } from '../components/SignatureStatement';
 import { CapabilitiesSection } from '../components/CapabilitiesSection';
-import { FooterSection } from '../components/FooterSection';
+import FooterSection from '../components/FooterSection';
 
 export default function Home() {
   const structuredData = {
